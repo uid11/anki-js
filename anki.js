@@ -8,6 +8,10 @@ cont = cont && cont.length && cont[0];
 
 if (!cont) return;
 
+if (cont._setted) return;
+
+cont._setted = true;
+
 var text = '';
 
 function numToStr(num, minlen) {
@@ -31,10 +35,14 @@ function getText() {
   return getTime();
 }
 
-setInterval(function() {
+function renewCont() {
   var newText = getText();
   if (newText === text) return;
   cont.innerHTML = text = newText;
-}, 5 * 1000);
+}
+
+setInterval(renewCont, 5 * 1000);
+
+renewCont();
 
 }());
