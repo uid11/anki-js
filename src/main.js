@@ -2,6 +2,8 @@
 
 (function() {
 
+var start = (new Date()).getTime();
+
 var cont = document.getElementsByClassName('INFOCONT');
 
 cont = cont && cont.length && cont[0];
@@ -31,8 +33,18 @@ function getTime() {
   return numToStr(hours, 2) + ':' + numToStr(minutes, 2);
 }
 
+function getSpentTime() {
+  var cur = (new Date()).getTime(),
+      sec = Math.round((cur - start)/1000);
+
+  if (sec < 30) return '';
+  if (sec < 60) return '30s';
+
+  return Math.floor(sec/60) + 'm';
+}
+
 function getText() {
-  return getTime();
+  return getSpentTime() + ' ' + getTime();
 }
 
 function renewCont() {
