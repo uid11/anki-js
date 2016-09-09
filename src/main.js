@@ -2,7 +2,7 @@
 
 (function() {
 
-var cont = document.getElementsByClassName('js-info-cont');
+var cont = document.getElementsByClassName('INFOCONT');
 
 cont = cont && cont.length && cont[0];
 
