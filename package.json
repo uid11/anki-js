@@ -1,0 +1,32 @@
+{
+  "name": "anki-js",
+  "version": "0.1.0",
+  "description": "Add some light functionality to Anki flash cards (via JS in flash cards).",
+  "main": "src/main.js",
+  "scripts": {
+    "test": "./node_modules/opener/opener.js ./build/test.html",
+    "build": "./src/build.js"
+  },
+  "keywords": [
+    "Anki",
+    "time",
+    "JS"
+  ],
+  "dependencies": {},
+  "devDependencies": {
+    "opener": "*"
+  },
+  "engines": {
+    "node": ">= 6.0.0"
+  },
+  "author": "uid-11222",
+  "bugs": {
+    "url": "https://github.com/uid-11222/anki-js/issues"
+  },
+  "license": "MIT",
+  "homepage": "https://github.com/uid-11222/anki-js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uid-11222/anki-js"
+  }
+}
