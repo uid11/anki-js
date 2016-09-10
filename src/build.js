@@ -5,7 +5,7 @@
 const fs = require(`fs`);
 
 const BUILD = `./build/`,
-      param = process.argv[2],
+      param = process.argv[2] || `en`,
       INFOCONT = `js-info-cont`;
 
 try {
@@ -14,8 +14,14 @@ try {
   fs.mkdirSync(BUILD);
 }
 
-const js = fs.readFileSync(`./src/main.js`, `utf8`)
-             .replace(`INFOCONT`, INFOCONT);
+let js = fs.readFileSync(`./src/main.js`, `utf8`)
+           .replace(`INFOCONT`, INFOCONT);
+
+if (param === `ru`) {
+  js = js.replace(`ENDLABEL`, `ENDLABEL
+    inputFixes.push(enToRu);
+  `);
+}
 
 const out = `
 

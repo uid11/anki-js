@@ -5,11 +5,19 @@
   **anki-js** add some light functionality to Anki flash cards (current time, spent time for current card, fix keyboard layout).
 
 ## Usage ##
-You need a node version >=6.0.0. Build project, then copy text of build/out.txt to the end of Anki front card template, and src/main.css to card styles.
+You need a node version >=6.0.0.
+Build project, then copy text of build/out.txt to the end of Anki front card template, and src/main.css to card styles.
+
+For switching off "input text fixing" print space as first symbol of string.
 
 ## Build ##
 ```bash
 $ npm run build
+```
+
+For adding autoreplacing english letters on russian use param 'ru':
+```bash
+$ npm run build ru
 ```
 
 ## Tests ##

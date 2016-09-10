@@ -67,11 +67,31 @@ function toLowerCase(txt) {
   return String(txt).toLowerCase();
 }
 
+var _enToRuTable = {
+  q: 'й', w: 'ц', e: 'у', r: 'к', t: 'е', y: 'н', u: 'г', i: 'ш',
+    o: 'щ', p: 'з', '[': 'х', ']': 'ъ',
+  a: 'ф', s: 'ы', d: 'в', f: 'а', g: 'п', h: 'р', j: 'о', k: 'л',
+    l: 'д', ';': 'ж', '\'': 'э',
+  z: 'я', x: 'ч', c: 'с', v: 'м', b: 'и', n: 'т', m: 'ь',
+    ',': 'б', '.': 'ю'
+};
+
+function _enToRu(char) {
+  return _enToRuTable[char] || char;
+}
+
+function enToRu(txt) {
+  return String(txt).replace(/[a-z[\];',.]/g, _enToRu);
+}
+
 inputFixes.push(toLowerCase);
 
 function renewInput() {
-  var cur = input.value,
-      next = fixInput(cur);
+  var cur = input.value;
+
+  if (cur.charAt(0) === ' ') return;
+
+  var next = fixInput(cur);
 
   if (cur !== next) input.value = next;
 }
@@ -90,5 +110,7 @@ if (input) {
 setInterval(renewCont, 5 * 1000);
 
 renewCont();
+
+// ENDLABEL
 
 }());
