@@ -6,7 +6,7 @@
 
 ## Usage ##
 You need a node version >=6.0.0.
-Build project, then copy text of build/out.txt to the end of Anki front card template, and src/main.css to card styles.
+Build project, then copy text of build/out.txt to the end of Anki front card template (for each card type), and src/main.css to card styles.
 
 For switching off "input text fixing" print space as first symbol of string.
 
