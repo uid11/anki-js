@@ -53,6 +53,40 @@ function renewCont() {
   cont.innerHTML = text = newText;
 }
 
+var inputFixes = [];
+
+function fixInput(txt) {
+  var cur = txt;
+  for (var i = 0; i < inputFixes.length; ++i) {
+    cur = inputFixes[i](cur);
+  }
+  return cur;
+}
+
+function toLowerCase(txt) {
+  return String(txt).toLowerCase();
+}
+
+inputFixes.push(toLowerCase);
+
+function renewInput() {
+  var cur = input.value,
+      next = fixInput(cur);
+
+  if (cur !== next) input.value = next;
+}
+
+var card = cont.parentNode,
+    input = card.getElementsByTagName('INPUT');
+
+input = input && input.length && input[0];
+
+if (input) {
+  input.addEventListener('keyup', renewInput);
+  input.addEventListener('keydown', renewInput);
+  input.addEventListener('keypress', renewInput);
+}
+
 setInterval(renewCont, 5 * 1000);
 
 renewCont();

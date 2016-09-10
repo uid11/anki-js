@@ -34,7 +34,7 @@ const test = `
 <link rel="stylesheet" href="../src/main.css">
 <h1>Test</h1>
 <script src="../src/test.js"></script>
-<div>${out}</div>
+<div><input>${out}</div>
 `;
 
 fs.writeFileSync(`${BUILD}out.txt`, out);
