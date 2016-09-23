@@ -1,6 +1,6 @@
 {
   "name": "anki-js",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "description": "Add some light functionality to Anki flash cards (via JS in flash cards).",
   "main": "src/main.js",
   "scripts": {
@@ -9,12 +9,15 @@
   },
   "keywords": [
     "Anki",
+    "AnkiWeb",
+    "AnkiDroid",
     "time",
-    "JS"
+    "JS",
+    "JavaScript"
   ],
   "dependencies": {},
   "devDependencies": {
-    "opener": "*"
+    "opener": "^1.4.2"
   },
   "engines": {
     "node": ">= 6.0.0"

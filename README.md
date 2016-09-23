@@ -23,11 +23,12 @@ $ npm run build ru
 ## Tests ##
 ```bash
 $ npm install
+$ npm run build
 $ npm test
 ```
 
 ## License ##
-  [MIT](LICENSE)
+[MIT](LICENSE)
 
 [license-image]: https://img.shields.io/badge/license-MIT-blue.svg "license-image"
 [dependencies-image]: https://img.shields.io/gemnasium/mathiasbynens/he.svg?maxAge=2592000 "dependencies-image"

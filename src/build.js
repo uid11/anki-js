@@ -32,11 +32,11 @@ ${js}
 </script>
 
 `.replace(/\n\s*\n/g, `\n`)
- .replace(/\/\*.*\*\//g, ``)
- .replace(/^\n*/, ``).replace(/\n*$/, ``);
+ .replace(/\/\*[\s\S]*?\*\//g, ``)
+ .replace(/^\n+/, ``).replace(/\n+$/, ``);
 
 const test = `
-<!doctype html><meta charset=utf-8><title>TEST</title>
+<!doctype html><meta charset="utf-8"><title>TEST</title>
 <link rel="stylesheet" href="../src/main.css">
 <h1>Test</h1>
 <script src="../src/test.js"></script>

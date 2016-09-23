@@ -16,6 +16,12 @@ cont._setted = true;
 
 var text = '';
 
+/**
+ * Transfer number to a string with leading zeros.
+ * @param  {number} num
+ * @param  {number} minlen Minimum length of result string.
+ * @return {string} Result string.
+ */
 function numToStr(num, minlen) {
   var str = String(num),
       diff = minlen - str.length;
@@ -25,6 +31,10 @@ function numToStr(num, minlen) {
   return str;
 }
 
+/**
+ * Get string with current time, like "18:43".
+ * @return {string} Result string.
+ */
 function getTime() {
   var date = new Date(),
       hours = date.getHours(),
@@ -33,6 +43,10 @@ function getTime() {
   return numToStr(hours, 2) + ':' + numToStr(minutes, 2);
 }
 
+/**
+ * Get string with round time spent from opening page, like "2m".
+ * @return {string} Result string.
+ */
 function getSpentTime() {
   var cur = (new Date()).getTime(),
       sec = Math.round((cur - start)/1000);
@@ -43,10 +57,17 @@ function getSpentTime() {
   return Math.floor(sec/60) + 'm';
 }
 
+/**
+ * Get full text for presenting in infobar.
+ * @return {string} Result string.
+ */
 function getText() {
   return getSpentTime() + ' ' + getTime();
 }
 
+/**
+ * Set fresh text to infobar (if it changed).
+ */
 function renewCont() {
   var newText = getText();
   if (newText === text) return;
@@ -55,6 +76,11 @@ function renewCont() {
 
 var inputFixes = [];
 
+/**
+ * Apply all fixes for text from INPUT field.
+ * @param  {string} txt Text from INPUT tag.
+ * @return {string} Result string.
+ */
 function fixInput(txt) {
   var cur = txt;
   for (var i = 0; i < inputFixes.length; ++i) {
@@ -63,6 +89,11 @@ function fixInput(txt) {
   return cur;
 }
 
+/**
+ * Transfer text to lowercase.
+ * @param  {string} txt
+ * @return {string} Result string.
+ */
 function toLowerCase(txt) {
   return String(txt).toLowerCase();
 }
@@ -76,16 +107,29 @@ var _enToRuTable = {
     ',': 'б', '.': 'ю'
 };
 
+/**
+ * Translate one char from EN to RU keyboard.
+ * @param  {string} char
+ * @return {string} Result char.
+ */
 function _enToRu(char) {
   return _enToRuTable[char] || char;
 }
 
+/**
+ * Translate text from EN to RU keyboard.
+ * @param  {string} txt
+ * @return {string} Result text.
+ */
 function enToRu(txt) {
   return String(txt).replace(/[a-z[\];',.]/g, _enToRu);
 }
 
 inputFixes.push(toLowerCase);
 
+/**
+ * Replace text in INPUT on fixed text.
+ */
 function renewInput() {
   var cur = input.value;
 
@@ -96,7 +140,7 @@ function renewInput() {
   if (cur !== next) input.value = next;
 }
 
-var card = cont.parentNode,
+var card  = cont.parentNode,
     input = card.getElementsByTagName('INPUT');
 
 input = input && input.length && input[0];

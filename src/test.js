@@ -1,14 +1,14 @@
 'use strict'; /* global document, window */
 
-function log(msg) {
+/**
+ * Log all JS errors on screen.
+ * @param {*} msg Text message or error object.
+ */
+window.onerror = function log(msg) {
   var p = document.createElement('P');
   p.style.color = 'red';
 
-  p.innerHTML = msg;
+  p.innerHTML = String(msg);
 
   document.body.appendChild(p);
-}
-
-window.onerror = function(msg) {
-  log(msg);
 };
