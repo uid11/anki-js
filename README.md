@@ -1,8 +1,11 @@
 # anki-js #
 
-  [![NPM version][npm-image]][npm-url] ![node][node-image] ![dependencies][dependencies-image] [![License MIT][license-image]](LICENSE)
+[![NPM version][npm-image]][npm-url] ![node][node-image] ![dependencies][dependencies-image] [![License MIT][license-image]](LICENSE)
 
-  **anki-js** add some light functionality to Anki flash cards (current time, spent time for current card, fix keyboard layout).
+[![NPM](https://nodei.co/npm/anki-js.png)](https://nodei.co/npm/anki-js/)
+
+**anki-js** add some light functionality to Anki flash cards (current time, spent time for current card, fix RU keyboard layout).  
+It use ES3 JS-code, so it work on all platforms (Windows, Linux, iOS, AnkiDroid).
 
 ## Usage ##
 You need a node version >=6.0.0.
