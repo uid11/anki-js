@@ -99,6 +99,7 @@ function toLowerCase(txt) {
 }
 
 var _enToRuTable = {
+  '\`': 'ё',
   q: 'й', w: 'ц', e: 'у', r: 'к', t: 'е', y: 'н', u: 'г', i: 'ш',
     o: 'щ', p: 'з', '[': 'х', ']': 'ъ',
   a: 'ф', s: 'ы', d: 'в', f: 'а', g: 'п', h: 'р', j: 'о', k: 'л',
@@ -122,7 +123,7 @@ function _enToRu(char) {
  * @return {string} Result text.
  */
 function enToRu(txt) {
-  return String(txt).replace(/[a-z[\];',.]/g, _enToRu);
+  return String(txt).replace(/[a-z[\];',.`]/g, _enToRu);
 }
 
 inputFixes.push(toLowerCase);

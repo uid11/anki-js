@@ -1,6 +1,6 @@
 {
   "name": "anki-js",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "description": "Add some light functionality to Anki flash cards (via JS in flash cards).",
   "main": "src/main.js",
   "scripts": {

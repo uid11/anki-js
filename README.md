@@ -8,7 +8,7 @@
 It use ES3 JS-code, so it work on all platforms (Windows, Linux, iOS, AnkiDroid).
 
 ## Usage ##
-You need a node version >=6.0.0.
+You need a node version >=6.0.0.  
 Build project, then copy text of build/out.txt to the end of Anki front card template (for each card type), and src/main.css to card styles.
 
 For switching off "input text fixing" print space as first symbol of string.
